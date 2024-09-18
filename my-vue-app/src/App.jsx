@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Card from './components/cards';
+import './components/cards.css';
+import './App.css';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app">
+      <Card
+        titulo="Tarea 1"
+        descripcion="Desarrollar el componente de Card en React"
+        persona="Matias Alves"
+        fechaInicio="18/09/2024"
+        fechaFin="20/09/2024"
+      />
+      <Card
+        titulo="Tarea 2"
+        descripcion="Revisar el código y hacer mejoras"
+        persona="María González"
+        fechaInicio="18/09/2024"
+        fechaFin="21/09/2024"
+      />
+      <Card
+        titulo="Tarea 3"
+        descripcion="Implementar pruebas"
+        persona="Carlos Martínez"
+        fechaInicio="19/09/2024"
+        fechaFin="22/09/2024"
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;
