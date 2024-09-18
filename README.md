@@ -1,1 +1,1 @@
-En las ramas pueden ver cada TA. Cada TA es una Rama.
+En las ramas pueden ver cada TA. Cada Rama es un TA.
