@@ -6,29 +6,30 @@ import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      <Card
-        titulo="Tarea 1"
-        descripcion="Desarrollar el componente de Card en React"
-        persona="Matias Alves"
-        fechaInicio="18/09/2024"
-        fechaFin="20/09/2024"
-      />
-      <Card
-        titulo="Tarea 2"
-        descripcion="Revisar el código y hacer mejoras"
-        persona="María González"
-        fechaInicio="18/09/2024"
-        fechaFin="21/09/2024"
-      />
-      <Card
-        titulo="Tarea 3"
-        descripcion="Implementar pruebas"
-        persona="Carlos Martínez"
-        fechaInicio="19/09/2024"
-        fechaFin="22/09/2024"
-      />
+    <div className="App">
+      <Card>
+        <h3>Tarea 1</h3>
+        <p>Descripción: Desarrollar el componente de card en React</p>
+        <p>Persona asignada: Matias Alves</p>
+        <p>Fecha inicio: 18/09/2024</p>
+        <p>Fecha de fin: 20/09/2024</p>
+      </Card>
+      <Card>
+        <h3>Tarea 2</h3>
+        <p>Descripción: Revisar el código y hacer mejoras</p>
+        <p>Persona asignada: Maria González</p>
+        <p>Fecha inicio: 18/09/2024</p>
+        <p>Fecha de fin: 21/09/2024</p>
+      </Card>
+      <Card>
+        <h3>Tarea 3</h3>
+        <p>Descripción:  Implementar pruebas</p>
+        <p>Persona asignada: Carlos Martínez</p>
+        <p>Fecha inicio: 18/09/2024</p>
+        <p>Fecha de fin: 22/09/2024</p>
+      </Card>
     </div>
+
   );
 }
 
