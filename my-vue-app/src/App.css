@@ -1,23 +1,8 @@
-.app {
-  font-family: 'Arial', sans-serif;
+.App {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background-color: #f4f4f9;
-}
-
-input {
-  padding: 10px;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #fff;
-
+  align-items: center;
+  height: 100vh;
+  background-color: #282c34;
+  color: white;
 }
