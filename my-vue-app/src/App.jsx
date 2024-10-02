@@ -1,11 +1,11 @@
 import React from 'react';
-import Counter from './components/Counter';
+import ToggleText from './components/ToggleText';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Counter />
+      < ToggleText />
     </div>
   );
 }
