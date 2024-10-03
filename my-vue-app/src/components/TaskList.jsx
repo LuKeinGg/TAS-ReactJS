@@ -17,6 +17,12 @@ const TaskList = () => {
         }
     };
 
+    const deleteTask = (indexToDelete) => {
+        // Filtrar las tareas que no coinciden con el índice de la tarea a eliminar
+        const updatedTasks = tasks.filter((task, index) => index !== indexToDelete);
+        setTasks(updatedTasks); // Actualizar la lista de tareas
+    };
+
     return (
         <div className="task-container">
             <h2>Lista de Tareas</h2>
@@ -33,7 +39,12 @@ const TaskList = () => {
             {/* Esto renderiza la lista de tareas */}
             <ul>
                 {tasks.map((taskItem, index) => (
-                    <li key={index}>{taskItem}</li>
+                    <li key={index}>{taskItem}
+                        {/* Botón para eliminar la tarea */}
+                        <button className="delete-button" onClick={() => deleteTask(index)}>
+                            Eliminar
+                        </button>
+                    </li>
                 ))}
             </ul>
         </div>
