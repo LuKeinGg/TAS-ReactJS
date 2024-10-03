@@ -4,16 +4,13 @@ import './TaskList.css';
 const TaskList = () => {
     const [task, setTask] = useState('');
     const [tasks, setTasks] = useState([]);
-
-    // Función para manejar el cambio en el input
-    const handleInputChange = (event) => {
-        setTask(event.target.value);
-    };
+    const [isEditing, setIsEditing] = useState(null); // Guardar el índice de la tarea que se está editando
+    const [editText, setEditText] = useState(''); // Estado para el texto editado
 
     const addTask = () => {
-        if (task.trim()) { // Si el input no está vacío
-            setTasks([...tasks, task]); // Agrega la tarea a la lista
-            setTask(''); // Limpia el input después de agregar la tarea
+        if (task.trim() !== '') {
+            setTasks([...tasks, task]);
+            setTask(''); // Limpiar el input después de agregar la tarea
         }
     };
 
@@ -23,27 +20,59 @@ const TaskList = () => {
         setTasks(updatedTasks); // Actualizar la lista de tareas
     };
 
+    // Iniciar edición
+    const startEditing = (index) => {
+        setIsEditing(index);
+        setEditText(tasks[index]); // Cargar el texto actual en el estado de edición
+    };
+
+    // Guardar edición
+    const saveEdit = (index) => {
+        const updatedTasks = tasks.map((task, i) => (i === index ? editText : task));
+        setTasks(updatedTasks);
+        setIsEditing(null); // Salir del modo edición
+    };
+
+    // Cancelar edición
+    const cancelEdit = () => {
+        setIsEditing(null); // Salir del modo edición sin guardar
+    };
+
     return (
-        <div className="task-container">
+        <div className="task-list-container">
             <h2>Lista de Tareas</h2>
 
-            {/* Input para ingresar una nueva tarea */}
+            {/* Input para agregar tareas */}
             <input
                 type="text"
-                placeholder="Ingresa una tarea"
+                placeholder="Escribe una tarea..."
                 value={task}
-                onChange={handleInputChange}
+                onChange={(e) => setTask(e.target.value)}
             />
-            <button onClick={addTask}>Agregar Tarea</button>
+            <button className="add-button" onClick={addTask}>Agregar Tarea</button>
 
-            {/* Esto renderiza la lista de tareas */}
+            {/* Renderizar lista de tareas */}
             <ul>
                 {tasks.map((taskItem, index) => (
-                    <li key={index}>{taskItem}
-                        {/* Botón para eliminar la tarea */}
-                        <button className="delete-button" onClick={() => deleteTask(index)}>
-                            Eliminar
-                        </button>
+                    <li key={index} className="task-item">
+                        {/* Modo edición */}
+                        {isEditing === index ? (
+                            <>
+                                <input
+                                    type="text"
+                                    value={editText}
+                                    onChange={(e) => setEditText(e.target.value)}
+                                />
+                                <button className="save-button" onClick={() => saveEdit(index)}>Guardar</button>
+                                <button className="cancel-button" onClick={cancelEdit}>Cancelar</button>
+                            </>
+                        ) : (
+                            <>
+                                {taskItem}
+                                <button className="edit-button" onClick={() => startEditing(index)}>Editar</button>
+                                <button className="delete-button" onClick={() => deleteTask(index)}>Eliminar</button>
+                            </>
+                        )}
                     </li>
                 ))}
             </ul>
