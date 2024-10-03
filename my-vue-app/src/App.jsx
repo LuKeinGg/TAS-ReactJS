@@ -1,11 +1,11 @@
 import React from 'react';
-import ToggleText from './components/ToggleText';
+import TaskList from './components/TaskList';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      < ToggleText />
+      <TaskList />
     </div>
   );
 }
