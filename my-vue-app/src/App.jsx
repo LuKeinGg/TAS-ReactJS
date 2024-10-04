@@ -1,18 +1,20 @@
 import React from 'react';
 import { UserProvider } from './UserContext';
-import UserProfile from './components/UserProfile';
+import MostrarUsuario from './components/MostrarUsuario';
+import InputUsuario from './components/InputUsuario';
+import './App.css';
 
 const App = () => {
   return (
     <UserProvider>
-      <div className="App">
-        <h1>Bienvenido a la aplicación</h1>
-        <UserProfile />
+      <div className="app-container">
+        <h1>Aplicación de Contexto de Usuario</h1>
+        <InputUsuario />
+        <MostrarUsuario />
       </div>
     </UserProvider>
   );
-}
+};
 
 export default App;
 
-//Pongo estos comentarios porque tuve un problema con un push. Para que pueda subir la rama.

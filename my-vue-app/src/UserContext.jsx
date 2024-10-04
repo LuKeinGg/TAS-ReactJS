@@ -4,13 +4,17 @@ export const UserContext = createContext();
 
 // Creo el proveedor del contexto que almacenará el nombre del usuario
 export const UserProvider = ({ children }) => {
-    const [username, setUsername] = useState('Matias Alves'); // Valor inicial del nombre del usuario
+    const [nombreUsuario, setNombreUsuario] = useState('Matias Alves');
+
+    // Función para actualizar el nombre del usuario
+    const cambiarNombreUsuario = (nuevoNombre) => {
+        setNombreUsuario(nuevoNombre);
+    };
 
     return (
-        <UserContext.Provider value={{ username, setUsername }}>
+        <UserContext.Provider value={{ nombreUsuario, cambiarNombreUsuario }}>
             {children}
         </UserContext.Provider>
     );
 };
 
-//Pongo estos comentarios porque tuve un problema con un push. Para que pueda subir la rama.
