@@ -1,12 +1,15 @@
 import React from 'react';
-import Timer from './components/Timer';
-import './App.css';
+import { UserProvider } from './UserContext';
+import UserProfile from './components/UserProfile';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Timer />
-    </div>
+    <UserProvider>
+      <div className="App">
+        <h1>Bienvenido a la aplicación</h1>
+        <UserProfile />
+      </div>
+    </UserProvider>
   );
 }
 
