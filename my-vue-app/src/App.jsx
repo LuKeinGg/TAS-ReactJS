@@ -14,3 +14,5 @@ const App = () => {
 }
 
 export default App;
+
+//Pongo estos comentarios porque tuve un problema con un push. Para que pueda subir la rama.
