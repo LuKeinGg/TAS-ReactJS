@@ -1,18 +1,17 @@
 import React from 'react';
-import { UserProvider } from './UserContext';
-import MostrarUsuario from './components/MostrarUsuario';
-import InputUsuario from './components/InputUsuario';
+import { TemaProvider } from './TemaContext';
+import CambiarTema from './components/CambiarTema';
+import Contenido from './components/Contenido';
 import './App.css';
 
 const App = () => {
   return (
-    <UserProvider>
-      <div className="app-container">
-        <h1>Aplicación de Contexto de Usuario</h1>
-        <InputUsuario />
-        <MostrarUsuario />
+    <TemaProvider>
+      <div className="app">
+        <CambiarTema />
+        <Contenido />
       </div>
-    </UserProvider>
+    </TemaProvider>
   );
 };
 

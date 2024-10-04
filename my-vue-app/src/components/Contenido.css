@@ -1,0 +1,17 @@
+.contenedor {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    transition: background-color 0.3s ease;
+}
+
+.oscuro {
+    background-color: #333;
+    color: #fff;
+}
+
+.claro {
+    background-color: #fff;
+    color: #333;
+}
