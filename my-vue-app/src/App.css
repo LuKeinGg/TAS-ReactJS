@@ -1,8 +1,10 @@
 .App {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   align-items: center;
-  height: 100vh;
-  background-color: #282c34;
-  color: white;
+  justify-content: center;
+  margin-top: 200px;
+
 }
+
+
+/* //Pongo estos comentarios porque tuve un problema con un push. Para que pueda subir la rama. */
