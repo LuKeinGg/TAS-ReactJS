@@ -1,11 +1,11 @@
 import React from 'react';
-import UserList from './components/UserList';
+import Timer from './components/Timer';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <UserList />
+      <Timer />
     </div>
   );
 }
