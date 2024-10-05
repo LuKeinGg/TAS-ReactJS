@@ -2,18 +2,19 @@ import React, { createContext, useState } from 'react';
 
 export const TemaContext = createContext();
 
-export const TemaProvider = ({ children }) => {
-    // Estado que manejará si el tema es oscuro o claro
-    const [temaOscuro, setTemaOscuro] = useState(false);
+const TemaProvider = ({ children }) => {
+    const [tema, setTema] = useState('claro'); // 'claro' como tema por defecto
 
-    // Función para alternar entre los temas
-    const cambiarTema = () => {
-        setTemaOscuro(!temaOscuro);
+    // Función para alternar entre el tema claro y oscuro
+    const toggleTema = () => {
+        setTema(tema === 'claro' ? 'oscuro' : 'claro');
     };
 
     return (
-        <TemaContext.Provider value={{ temaOscuro, cambiarTema }}>
+        <TemaContext.Provider value={{ tema, toggleTema }}>
             {children}
         </TemaContext.Provider>
     );
 };
+
+export default TemaProvider;
